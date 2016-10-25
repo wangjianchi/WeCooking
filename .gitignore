@@ -9,3 +9,5 @@ build
 /build
 /captures
 .externalNativeBuild
+/common_lib/build
+
