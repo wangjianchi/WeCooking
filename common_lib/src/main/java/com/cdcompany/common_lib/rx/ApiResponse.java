@@ -5,38 +5,38 @@ package com.cdcompany.common_lib.rx;
  */
 public class ApiResponse<T> {
 
-    public static final int SUCCESS_CODE = 200;
+    public static final int SUCCESS_CODE = 0;
 
-    private int code;
-    private String msg;
-    private T newslist;
+    private int error_code;
+    private String reason;
+    private T result;
 
-    public int getCode() {
-        return code;
+    public int getError_code() {
+        return error_code;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setError_code(int error_code) {
+        this.error_code = error_code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getReason() {
+        return reason;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
-    public T getNewsList() {
-        return newslist;
+    public T getResult() {
+        return result;
     }
 
-    public void setNewsList(T newsList) {
-        this.newslist = newsList;
+    public void setResult(T result) {
+        this.result = result;
     }
 
     public boolean isSuccess() {
-        if (this.code == SUCCESS_CODE) {
+        if (this.error_code == SUCCESS_CODE) {
             return true;
         } else {
             return false;
