@@ -2,6 +2,7 @@ package com.cdcompany.wecooking.api;
 
 import com.cdcompany.common_lib.rx.RxResultHelper;
 import com.cdcompany.common_lib.rx.SchedulersCompat;
+import com.cdcompany.wecooking.api.api.CookApi;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
 
 import javax.inject.Inject;

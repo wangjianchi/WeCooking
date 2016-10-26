@@ -1,4 +1,4 @@
-package com.cdcompany.wecooking.api;
+package com.cdcompany.wecooking.api.api;
 
 import com.cdcompany.common_lib.rx.ApiResponse;
 import com.cdcompany.wecooking.model.ListObjectWxHot;

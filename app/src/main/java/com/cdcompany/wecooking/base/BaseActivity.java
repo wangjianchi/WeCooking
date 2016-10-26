@@ -67,5 +67,9 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     protected abstract void setupActivityComponent(AppComponent appComponent, ActivityModule activityModule);
 
     protected abstract int getLayout();
+
+    /**
+     * 抽象方法，数据和事件初始化
+     */
     protected abstract void initEventAndData();
 }
