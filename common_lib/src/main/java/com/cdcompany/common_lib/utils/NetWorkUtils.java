@@ -13,8 +13,7 @@ import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
-
-import com.wkw.common_lib.Ext;
+import com.cdcompany.common_lib.Ext;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

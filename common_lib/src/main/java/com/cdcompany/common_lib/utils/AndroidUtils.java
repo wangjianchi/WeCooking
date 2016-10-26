@@ -7,7 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.wkw.common_lib.R;
+import com.cdcompany.common_lib.R;
+
 
 /**
  * Created by wukewei on 16/7/26.

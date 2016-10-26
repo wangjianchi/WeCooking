@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Common_lib</string>
+    <string name="copy_done">复制成功</string>
+    <string name="open_failure">打开失败</string>
 </resources>

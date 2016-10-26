@@ -18,7 +18,7 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
 
-import com.wkw.common_lib.Ext;
+import com.cdcompany.common_lib.Ext;
 
 import java.security.InvalidParameterException;
 

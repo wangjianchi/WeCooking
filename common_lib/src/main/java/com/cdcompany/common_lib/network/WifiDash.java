@@ -4,8 +4,9 @@ import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-import com.wkw.common_lib.Ext;
-import com.wkw.common_lib.utils.StringUtils;
+import com.cdcompany.common_lib.Ext;
+import com.cdcompany.common_lib.utils.StringUtils;
+
 
 /**
  * Created by wukewei on 16/7/25.

@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.cdcompany.common_lib.utils.AppManager;
 import com.cdcompany.wecooking.App;
+import com.cdcompany.wecooking.reject.component.AppComponent;
+import com.cdcompany.wecooking.reject.module.ActivityModule;
 
 import javax.inject.Inject;
 
@@ -21,8 +24,8 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     @Inject
     protected T mPresenter;
     protected Activity mContext;
-    @Inject
-    protected Navigator navigator;
+//    @Inject
+//    protected Navigator navigator;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +44,12 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     @Override

@@ -2,8 +2,9 @@ package com.cdcompany.common_lib.network;
 
 import android.support.annotation.RequiresPermission;
 
-import com.wkw.common_lib.Ext;
-import com.wkw.common_lib.utils.NetWorkUtils;
+import com.cdcompany.common_lib.Ext;
+import com.cdcompany.common_lib.utils.NetWorkUtils;
+
 
 /**
  * Created by wukewei on 16/7/25.

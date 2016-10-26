@@ -8,9 +8,9 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.wkw.common_lib.Ext;
-import com.wkw.common_lib.utils.NetWorkUtils;
-import com.wkw.common_lib.utils.StringUtils;
+import com.cdcompany.common_lib.Ext;
+import com.cdcompany.common_lib.utils.NetWorkUtils;
+import com.cdcompany.common_lib.utils.StringUtils;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Method;

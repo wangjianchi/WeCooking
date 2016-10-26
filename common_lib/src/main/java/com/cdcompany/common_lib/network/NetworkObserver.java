@@ -11,7 +11,8 @@ import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.wkw.common_lib.Ext;
+import com.cdcompany.common_lib.Ext;
+
 
 /**
  * Created by wukewei on 16/7/25.
