@@ -1,6 +1,8 @@
 package com.cdcompany.wecooking.reject.component;
 
 import android.app.Activity;
+import android.support.v4.app.Fragment;
+
 import com.cdcompany.wecooking.api.DataManager;
 import com.cdcompany.wecooking.reject.PerFragment;
 import com.cdcompany.wecooking.reject.module.FragmentModule;
@@ -18,4 +20,5 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
+    void inject(Fragment fragment);
 }

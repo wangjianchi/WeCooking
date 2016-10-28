@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 
 /**
- * Created by wukewei on 16/5/26.
+ * Created by cd14 on 16/5/26.
  */
 public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivity implements IView {
 
@@ -56,7 +56,6 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     protected void onDestroy() {
         super.onDestroy();
         AppManager.getAppManager().removeActivity(this);
-        ButterKnife.unbind(this);
         if (mPresenter != null) mPresenter.detachView();
     }
 
