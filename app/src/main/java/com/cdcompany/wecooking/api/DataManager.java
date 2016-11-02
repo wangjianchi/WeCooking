@@ -1,9 +1,13 @@
 package com.cdcompany.wecooking.api;
 
+import android.util.Log;
+
 import com.cdcompany.common_lib.rx.RxResultHelper;
 import com.cdcompany.common_lib.rx.SchedulersCompat;
 import com.cdcompany.wecooking.api.api.CookApi;
+import com.cdcompany.wecooking.model.ListObjectNews;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
+import com.cdcompany.wecooking.utils.GsonUtils;
 
 import javax.inject.Inject;
 
@@ -18,6 +22,7 @@ import rx.functions.Action1;
 public class DataManager {
     private Retrofit mRetrofit;
     public static final String WX_HOT_KEY = "af5bbfacad8585e0287adadab7d0120b";
+    public static final String NEWS_KEY = "0e9c177c26873f1dfcf8bb0af9513ba8";
     public static final int PAGE_SIZE = 20;
 
     @Inject
@@ -32,8 +37,22 @@ public class DataManager {
                 .doOnNext(new Action1<ListObjectWxHot>() {
                     @Override
                     public void call(ListObjectWxHot listObjectWxHot) {
-
+                        Log.i("DataManager", "call: "+ GsonUtils.toJsonString(listObjectWxHot));
                     }
                 });
     }
+    public Observable<ListObjectNews> getNews(){
+        CookApi mCookApi = mRetrofit.create(CookApi.class);
+        return mCookApi.getNews(NEWS_KEY)
+                .compose(RxResultHelper.<ListObjectNews>handleResult())
+                .compose(SchedulersCompat.<ListObjectNews>applyIoSchedulers())
+                .doOnNext(new Action1<ListObjectNews>() {
+                    @Override
+                    public void call(ListObjectNews listObjectNews) {
+                        Log.i("DataManager", "call: news "+ GsonUtils.toJsonString(listObjectNews));
+                    }
+                });
+    }
+
+
 }

@@ -46,9 +46,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 //        mPresenter.getListData();
         int[] testColors = {0xFF5B4947,0xFF5B4947,0xFF5B4947,0xFFF57C00,0xFFF57C00};
         mController = bottomTabLayout.builder()
-                .addTabItem(android.R.drawable.ic_menu_add,"发现",testColors[0])
-                .addTabItem(android.R.drawable.ic_menu_send,"消息",testColors[1])
-                .addTabItem(android.R.drawable.ic_menu_info_details,"我的",testColors[2])
+                .addTabItem(R.drawable.ic_topic,"发现",testColors[0])
+                .addTabItem(R.drawable.ic_message,"消息",testColors[1])
+                .addTabItem(R.drawable.ic_user,"我的",testColors[2])
                 .build();
 
         initFragments();

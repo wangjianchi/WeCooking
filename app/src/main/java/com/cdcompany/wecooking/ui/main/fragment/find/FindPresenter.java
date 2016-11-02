@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.cdcompany.common_lib.rx.RxSubscriber;
 import com.cdcompany.wecooking.base.BasePresenter;
 import com.cdcompany.wecooking.model.FindSection;
+import com.cdcompany.wecooking.model.ListObjectNews;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
 import com.cdcompany.wecooking.model.ObjectWxHot;
 
@@ -24,6 +25,10 @@ public class FindPresenter extends BasePresenter<FindContract.View> implements F
 
     protected void replacePn() {
         pno = 1;
+    }
+
+    protected void addPn(){
+        pno ++;
     }
 
     private boolean isRefresh() {
@@ -66,6 +71,24 @@ public class FindPresenter extends BasePresenter<FindContract.View> implements F
 
         addSubscribe(subscription);
     }
+
+    @Override
+    public void getNewData() {
+        Subscription subscription1 = dataManager.getNews()
+                .subscribe(new RxSubscriber<ListObjectNews>() {
+                    @Override
+                    public void _noNext(ListObjectNews listObjectNews) {
+                        mView.addNewsData(listObjectNews.getData());
+                    }
+
+                    @Override
+                    public void _onError(String msg) {
+                        mView.showError(msg);
+                    }
+                });
+        addSubscribe(subscription1);
+    }
+
     public  List<FindSection> getSectionData(List<ObjectWxHot> wxlist){
         List<FindSection> sections = new ArrayList<FindSection>();
         for (int i = 0; i < wxlist.size() ; i++) {

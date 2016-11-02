@@ -6,8 +6,14 @@
              tools:context="com.cdcompany.wecooking.ui.main.fragment.find.FindFragment">
 
     <include layout="@layout/layout_toolbar_view"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_find_news_list"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout_find"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_find_news_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>

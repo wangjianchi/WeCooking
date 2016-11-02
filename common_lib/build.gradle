@@ -30,4 +30,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'io.reactivex:rxjava:1.1.4'
     compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile 'com.google.code.gson:gson:2.6.2'
 }

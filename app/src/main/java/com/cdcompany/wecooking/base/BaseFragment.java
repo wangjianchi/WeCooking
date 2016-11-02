@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.cdcompany.wecooking.App;
@@ -87,25 +88,41 @@ public abstract class BaseFragment <T extends IPresenter> extends Fragment imple
 
     protected abstract int getLayoutId();
     protected abstract void initEventAndData();
+    protected static final int NULL_RESOURCE = 0;
     @Bind(R.id.tv_bar_left) TextView tv_bar_left;
     @Bind(R.id.tv_bar_right) TextView tv_bar_right;
     @Bind(R.id.tv_bar_title) TextView tv_bar_title;
-    public void initToolBar(String rightText,String Title,String leftText){
+    @Bind(R.id.ib_bar_left) ImageButton ib_bar_left;
+    @Bind(R.id.ib_bar_right) ImageButton ib_bar_right;
+    @Bind(R.id.ib_bar_title) ImageButton ib_bar_title;
+    public void initToolBar(String leftText,String Title,String rightText,int leftRes,int midRes,int rightRes){
         Toolbar toolbar = (Toolbar) mView.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         toolbar.setTitle("");
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
-        if (!TextUtils.isEmpty(rightText)){
-            tv_bar_left.setText(rightText);
+        if (!TextUtils.isEmpty(leftText)){
+            tv_bar_left.setText(leftText);
             tv_bar_left.setVisibility(View.VISIBLE);
         }
         if (!TextUtils.isEmpty(Title)){
             tv_bar_title.setText(Title);
             tv_bar_title.setVisibility(View.VISIBLE);
         }
-        if (!TextUtils.isEmpty(leftText)){
-            tv_bar_right.setText(leftText);
+        if (!TextUtils.isEmpty(rightText)){
+            tv_bar_right.setText(rightText);
             tv_bar_right.setVisibility(View.VISIBLE);
+        }
+        if (leftRes != NULL_RESOURCE){
+            ib_bar_left.setImageResource(leftRes);
+            ib_bar_left.setVisibility(View.VISIBLE);
+        }
+        if (rightRes != NULL_RESOURCE){
+            ib_bar_right.setImageResource(rightRes);
+            ib_bar_right.setVisibility(View.VISIBLE);
+        }
+        if (midRes != NULL_RESOURCE){
+            ib_bar_title.setImageResource(midRes);
+            ib_bar_title.setVisibility(View.VISIBLE);
         }
     }
 }

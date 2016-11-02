@@ -27,12 +27,6 @@ public class App extends Application {
 
     }
     public static AppComponent getAppComponent() {
-        if (appComponent == null){
-            appComponent = DaggerAppComponent.builder()
-                    .appModule(new AppModule(App.getAppContext()))
-                    .netModule(new NetModule())
-                    .build();
-        }
         return appComponent;
     }
 

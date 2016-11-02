@@ -16,6 +16,7 @@
         <item name="android:layout_marginLeft">@dimen/normal_toolbar_margin</item>
         <item name="android:layout_marginRight">@dimen/normal_toolbar_margin</item>
         <item name="android:gravity">center</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <!--加粗黑色字体-->
