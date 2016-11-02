@@ -44,12 +44,22 @@ public abstract class BaseFragment <T extends IPresenter> extends Fragment imple
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mView = inflater.inflate(getLayoutId(),null);
-        setupActivityComponent(App.getAppComponent(),new FragmentModule(this));
-        if (mPresenter != null) mPresenter.attachView(this);
-        ButterKnife.bind(this, mView);
-        initEventAndData();
+       if (mView == null){
+           mView = inflater.inflate(getLayoutId(),null);
+           setupActivityComponent(App.getAppComponent(),new FragmentModule(this));
+           mPresenter.attachView(this);
+           ButterKnife.bind(this, mView);
+           initEventAndData();
+       }
         return mView;
+    }
+
+
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
     }
 
     @Override

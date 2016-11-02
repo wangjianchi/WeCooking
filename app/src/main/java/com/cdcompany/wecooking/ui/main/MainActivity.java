@@ -98,7 +98,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         mFragments.add(new MsgFragment());
         mFragments.add(new MineFragment());
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        // transaction.setCustomAnimations(R.anim.push_up_in,R.anim.push_up_out);
         transaction.add(R.id.frameLayout,mFragments.get(0));
         transaction.commit();
     }
@@ -108,6 +107,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         public void onSelected(int index, Object tag) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frameLayout,mFragments.get(index));
+//            transaction.show(mFragments.get(index));
             transaction.commit();
         }
 

@@ -4,6 +4,8 @@ import android.app.Activity;
 
 import com.cdcompany.wecooking.api.DataManager;
 
+import javax.inject.Inject;
+
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
 
@@ -15,10 +17,10 @@ public abstract class BasePresenter<T extends IView> implements IPresenter<T> {
     protected Activity mActivity;
     protected T mView;
     protected CompositeSubscription mCompositeSubscription;
+    @Inject
     protected DataManager dataManager;
 
-    public BasePresenter(DataManager dataManager, Activity activity) {
-        this.dataManager = dataManager;
+    public BasePresenter(Activity activity) {
         this.mActivity = activity;
     }
 

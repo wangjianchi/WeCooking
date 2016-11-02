@@ -3,7 +3,6 @@ package com.cdcompany.wecooking.ui.main;
 import android.app.Activity;
 
 import com.cdcompany.common_lib.rx.RxSubscriber;
-import com.cdcompany.wecooking.api.DataManager;
 import com.cdcompany.wecooking.base.BasePresenter;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
 
@@ -27,9 +26,14 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
     }
 
     @Inject
-    public MainPresenter(DataManager dataManager, Activity activity) {
-        super(dataManager, activity);
+    public MainPresenter(Activity activity) {
+        super(activity);
     }
+
+    /**
+     * 获取列表
+     * rxjava:创建订阅关系subscription，
+     */
 
     @Override
     public void getListData() {

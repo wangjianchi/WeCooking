@@ -8,5 +8,15 @@
  
  dagger教程：https://github.com/luxiaoming/dagger2Demo
  
+
+ 数据流程示例：
+ 1.MainActivity:继承自BaseActivity,BA inject对象mPresenter
+     @Override
+     protected void initEventAndData() {
+         mPresenter.getListData();//获取列表
+         }
+ 2.MainPresenter：继承自BasePresenter,BP inject对象dataManager
+ 
+ 
  
  

@@ -1,11 +1,13 @@
 package com.cdcompany.wecooking.reject.component;
 
 import android.app.Activity;
-import android.support.v4.app.Fragment;
 
 import com.cdcompany.wecooking.api.DataManager;
 import com.cdcompany.wecooking.reject.PerFragment;
 import com.cdcompany.wecooking.reject.module.FragmentModule;
+import com.cdcompany.wecooking.ui.main.fragment.find.FindFragment;
+import com.cdcompany.wecooking.ui.main.fragment.message.MsgFragment;
+import com.cdcompany.wecooking.ui.main.fragment.mine.MineFragment;
 
 import dagger.Component;
 
@@ -20,5 +22,7 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
-    void inject(Fragment fragment);
+    void inject(FindFragment fragment);
+    void inject(MineFragment fragment);
+    void inject(MsgFragment fragment);
 }
