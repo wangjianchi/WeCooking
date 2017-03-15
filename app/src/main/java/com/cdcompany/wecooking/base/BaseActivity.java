@@ -24,8 +24,7 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     @Inject
     protected T mPresenter;
     protected Activity mContext;
-//    @Inject
-//    protected Navigator navigator;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

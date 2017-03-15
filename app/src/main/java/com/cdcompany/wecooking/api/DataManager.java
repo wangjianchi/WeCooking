@@ -8,6 +8,7 @@ import com.cdcompany.wecooking.api.api.CookApi;
 import com.cdcompany.wecooking.model.ListObjectNews;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
 import com.cdcompany.wecooking.utils.GsonUtils;
+import com.orhanobut.logger.Logger;
 
 import javax.inject.Inject;
 
@@ -37,7 +38,7 @@ public class DataManager {
                 .doOnNext(new Action1<ListObjectWxHot>() {
                     @Override
                     public void call(ListObjectWxHot listObjectWxHot) {
-                        Log.i("DataManager", "call: "+ GsonUtils.toJsonString(listObjectWxHot));
+                        Logger.i( GsonUtils.toJsonString(listObjectWxHot));
                     }
                 });
     }

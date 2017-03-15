@@ -6,6 +6,7 @@ import com.cdcompany.wecooking.reject.component.AppComponent;
 import com.cdcompany.wecooking.reject.component.DaggerAppComponent;
 import com.cdcompany.wecooking.reject.module.AppModule;
 import com.cdcompany.wecooking.reject.module.NetModule;
+import com.orhanobut.logger.Logger;
 
 /**
  * Created by wukewei on 16/5/26.
@@ -24,6 +25,7 @@ public class App extends Application {
                 .appModule(new AppModule(this))
                 .netModule(new NetModule())
                 .build();
+        Logger.init();
 
     }
     public static AppComponent getAppComponent() {

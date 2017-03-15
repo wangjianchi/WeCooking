@@ -8,6 +8,8 @@ import com.cdcompany.wecooking.model.FindSection;
 import com.cdcompany.wecooking.model.ListObjectNews;
 import com.cdcompany.wecooking.model.ListObjectWxHot;
 import com.cdcompany.wecooking.model.ObjectWxHot;
+import com.google.gson.Gson;
+import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +99,8 @@ public class FindPresenter extends BasePresenter<FindContract.View> implements F
             }
             sections.add(new FindSection(wxlist.get(i)));
         }
+        Gson gson = new Gson();
+        Logger.i("ssssssss");
         return sections;
     }
 }

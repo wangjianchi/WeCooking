@@ -1,6 +1,7 @@
 package com.cdcompany.wecooking.ui.main.fragment.find;
 
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -24,8 +25,10 @@ import com.cdcompany.wecooking.model.ObjectNews;
 import com.cdcompany.wecooking.reject.component.AppComponent;
 import com.cdcompany.wecooking.reject.component.DaggerFragmentComponent;
 import com.cdcompany.wecooking.reject.module.FragmentModule;
+import com.cdcompany.wecooking.ui.item.TabActivity;
 import com.cdcompany.wecooking.utils.GlideUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +91,12 @@ public class FindFragment extends BaseFragment<FindPresenter> implements FindCon
         });
         mPresenter.getListData();
         mPresenter.getNewData();
+        rv_find_news_list.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
+                startActivity(new Intent(getActivity(), TabActivity.class));
+            }
+        });
     }
 
     /**
